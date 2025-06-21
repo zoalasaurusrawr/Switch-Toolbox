@@ -1,41 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5E55CA2B-F181-4681-AAFA-A20FEBCF7387}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Toolbox</RootNamespace>
-    <AssemblyName>Toolbox</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Tool.ico</ApplicationIcon>
@@ -50,14 +19,10 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DirectXTexNet, Version=1.0.0.3, Culture=neutral, PublicKeyToken=67e4f5ed452a4f5d, processorArchitecture=MSIL">
-      <HintPath>..\packages\DirectXTexNet.1.0.0-rc3\lib\net40\DirectXTexNet.dll</HintPath>
-    </Reference>
     <Reference Include="GL_EditorFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\GL_EditorFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Octokit, Version=0.31.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Switch_Toolbox\Lib\Octokit.dll</HintPath>
@@ -74,343 +39,199 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Syroot.NintenTools.NSW.Bntx, Version=1.2.3.0, Culture=neutral, PublicKeyToken=null" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\AF_FileAssociations.cs" />
-    <Compile Include="GUI\ApplicationCloseDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\ApplicationCloseDialog.Designer.cs">
-      <DependentUpon>ApplicationCloseDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Credits.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Credits.Designer.cs">
-      <DependentUpon>Credits.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\FileAssociationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\FileAssociationForm.Designer.cs">
-      <DependentUpon>FileAssociationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\GithubIssueDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\GithubIssueDialog.Designer.cs">
-      <DependentUpon>GithubIssueDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\GithubUpdateDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\GithubUpdateDialog.Designer.cs">
-      <DependentUpon>GithubUpdateDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\HashCalculatorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\HashCalculatorForm.Designer.cs">
-      <DependentUpon>HashCalculatorForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\NodeWrappers.cs" />
-    <Compile Include="GUI\PluginManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\PluginManager.Designer.cs">
-      <DependentUpon>PluginManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Settings.Designer.cs">
-      <DependentUpon>Settings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Startup Window.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Startup Window.Designer.cs">
-      <DependentUpon>Startup Window.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdateProgram.cs" />
-    <Compile Include="VersionCheck.cs" />
-    <Compile Include="WindowsExplorer\ExplorerContextMeny.cs" />
-    <EmbeddedResource Include="GUI\ApplicationCloseDialog.resx">
-      <DependentUpon>ApplicationCloseDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Credits.resx">
-      <DependentUpon>Credits.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FileAssociationForm.resx">
-      <DependentUpon>FileAssociationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GithubIssueDialog.resx">
-      <DependentUpon>GithubIssueDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\GithubUpdateDialog.resx">
-      <DependentUpon>GithubUpdateDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\HashCalculatorForm.resx">
-      <DependentUpon>HashCalculatorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\PluginManager.resx">
-      <DependentUpon>PluginManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Settings.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Startup Window.resx">
-      <DependentUpon>Startup Window.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="KclMaterialPresets\3D World.json">
+    <None Update="KclMaterialPresets\3D World.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="KclMaterialPresets\Default.json">
+    <None Update="KclMaterialPresets\Default.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="KclMaterialPresets\Mario Kart 8 Deluxe.json">
+    <None Update="KclMaterialPresets\Mario Kart 8 Deluxe.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="KclMaterialPresets\Mario Kart 8.json">
+    <None Update="KclMaterialPresets\Mario Kart 8.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="KclMaterialPresets\Mario Kart Wii.json">
+    <None Update="KclMaterialPresets\Mario Kart Wii.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="KclMaterialPresets\Mario Odyssey.json">
+    <None Update="KclMaterialPresets\Mario Odyssey.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="KclMaterialPresets\Splatoon 1.json">
+    <None Update="KclMaterialPresets\Splatoon 1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="KclMaterialPresets\Splatoon 2.json">
+    <None Update="KclMaterialPresets\Splatoon 2.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="KclMaterialPresets\Twilight Princess.json">
+    <None Update="KclMaterialPresets\Twilight Princess.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Lib\MTVertexFormats\M11.json">
+    <None Update="Lib\MTVertexFormats\M11.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Lib\MTVertexFormats\MHGU.json">
+    <None Update="Lib\MTVertexFormats\MHGU.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Lib\SarcHashes\ALBW.saht">
+    <None Update="Lib\SarcHashes\ALBW.saht">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
-    <None Include="Properties\app.manifest" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <None Include="Shader\Bcres\BCRES.frag">
+    <None Update="Shader\Bcres\BCRES.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bcres\BCRES.vert">
+    <None Update="Shader\Bcres\BCRES.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bfres\BFRES.frag">
+    <None Update="Shader\Bfres\BFRES.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bfres\BFRES.vert">
+    <None Update="Shader\Bfres\BFRES.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bfres\BFRESTurboShadow.frag">
+    <None Update="Shader\Bfres\BFRESTurboShadow.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bfres\BFRES_Botw.frag">
+    <None Update="Shader\Bfres\BFRES_Botw.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bfres\BFRES_Debug.frag">
+    <None Update="Shader\Bfres\BFRES_Debug.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bfres\BFRES_PBR.frag">
+    <None Update="Shader\Bfres\BFRES_PBR.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bfres\BFRES_utility.frag">
+    <None Update="Shader\Bfres\BFRES_utility.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bfres\Normals.frag">
+    <None Update="Shader\Bfres\Normals.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bfres\Normals.geom">
+    <None Update="Shader\Bfres\Normals.geom">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bfres\Normals.vert">
+    <None Update="Shader\Bfres\Normals.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bone.frag">
+    <None Update="Shader\Bone.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Bone.vert">
+    <None Update="Shader\Bone.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Drawing2D\KCL.frag">
+    <None Update="Shader\Drawing2D\KCL.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Drawing2D\KCL.vert">
+    <None Update="Shader\Drawing2D\KCL.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\GFBModel.frag">
+    <None Update="Shader\GFBModel.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\GFBModel.vert">
+    <None Update="Shader\GFBModel.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\HDRSkyBox\HDRSkyBox.frag">
+    <None Update="Shader\HDRSkyBox\HDRSkyBox.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\HDRSkyBox\HDRSkyBox.vert">
+    <None Update="Shader\HDRSkyBox\HDRSkyBox.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\KCL.frag">
+    <None Update="Shader\KCL.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\KCL.vert">
+    <None Update="Shader\KCL.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Layout\Bflyt.frag">
+    <None Update="Shader\Layout\Bflyt.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Layout\Bflyt.vert">
+    <None Update="Shader\Layout\Bflyt.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Layout\Legacy\Bflyt.frag">
+    <None Update="Shader\Layout\Legacy\Bflyt.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Layout\Legacy\Bflyt.vert">
+    <None Update="Shader\Layout\Legacy\Bflyt.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Legacy\BFRES.frag" />
-    <None Include="Shader\Legacy\BFRES.vert" />
-    <None Include="Shader\Legacy\KCL.frag">
+    <None Update="Shader\Legacy\KCL.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Legacy\KCL.vert">
+    <None Update="Shader\Legacy\KCL.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\LevelEditor\BfresBasic.frag">
+    <None Update="Shader\LevelEditor\BfresBasic.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\LevelEditor\BfresBasic.vert">
+    <None Update="Shader\LevelEditor\BfresBasic.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\LevelEditor\BfresDebug.frag">
+    <None Update="Shader\LevelEditor\BfresDebug.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\LevelEditor\ProbeSphere.frag">
+    <None Update="Shader\LevelEditor\ProbeSphere.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\LevelEditor\ProbeSphere.vert">
+    <None Update="Shader\LevelEditor\ProbeSphere.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\MKAGPDX\MKAGPDX_Model.frag">
+    <None Update="Shader\MKAGPDX\MKAGPDX_Model.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\MKAGPDX\MKAGPDX_Model.vert">
+    <None Update="Shader\MKAGPDX\MKAGPDX_Model.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Path\LineShader2.geom">
+    <None Update="Shader\Path\LineShader2.geom">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Path\TriangleShader2.geom">
+    <None Update="Shader\Path\TriangleShader2.geom">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\PBR\brdf.frag">
+    <None Update="Shader\PBR\brdf.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\PBR\brdf.vert">
+    <None Update="Shader\PBR\brdf.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\PBR\HDR.frag">
+    <None Update="Shader\PBR\HDR.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\PBR\HDR.vert">
+    <None Update="Shader\PBR\HDR.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\PBR\irradianceShader.frag">
+    <None Update="Shader\PBR\irradianceShader.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\PBR\irradianceShader.vert">
+    <None Update="Shader\PBR\irradianceShader.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\PBR\preFilter.frag">
+    <None Update="Shader\PBR\preFilter.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\PBR\preFilter.vert">
+    <None Update="Shader\PBR\preFilter.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\GenericShader.frag">
+    <None Update="Shader\GenericShader.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\GenericShader.vert">
+    <None Update="Shader\GenericShader.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Utility\Utility.frag">
+    <None Update="Shader\Utility\Utility.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Shader\Utility\Wireframe.frag">
+    <None Update="Shader\Utility\Wireframe.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Update.bat">
+    <None Update="Update.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\File_Format_Library\File_Format_Library.csproj">
-      <Project>{a11705cf-a6a3-41c3-875a-e1cfd8080f09}</Project>
-      <Name>File_Format_Library</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Switch_Toolbox_Library\Toolbox_Library.csproj">
-      <Project>{96820047-2a39-4e5a-bfa4-e84fff5c66cf}</Project>
-      <Name>Toolbox_Library</Name>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Updater\Updater.csproj">
-      <Project>{d82a2c08-2a65-43af-bda6-a36cc27aa003}</Project>
-      <Name>Updater</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\File_Format_Library\File_Format_Library.csproj" />
+    <ProjectReference Include="..\Switch_Toolbox_Library\Toolbox_Library.csproj" />
+    <ProjectReference Include="..\Updater\Updater.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gl_EditorFramework.dll">
@@ -654,7 +475,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Projects\Recent\DUMMY.txt" />
-    <None Include="Shader\LevelEditor\LightingGraphics.frag">
+    <None Update="Shader\LevelEditor\LightingGraphics.frag">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="tegra_swizzle_x64.dll">
@@ -678,9 +499,7 @@
     <Content Include="ZstdNet.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\Save.png" />
-    <None Include="Resources\UpdateIcon.png" />
-    <None Include="Shader\Utility\PbrUtility.frag">
+    <None Update="Shader\Utility\PbrUtility.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="Switch_Toolbox.csproj.user" />
@@ -694,20 +513,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Tool.ico" />
-    <None Include="Resources\Logo.png" />
     <Content Include="Version.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\AssimpNet.4.1.0\build\AssimpNet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AssimpNet.4.1.0\build\AssimpNet.targets'))" />
-    <Error Condition="!Exists('..\packages\DirectXTexNet.1.0.0-rc3\build\DirectXTexNet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\DirectXTexNet.1.0.0-rc3\build\DirectXTexNet.targets'))" />
-  </Target>
-  <Import Project="..\packages\AssimpNet.4.1.0\build\AssimpNet.targets" Condition="Exists('..\packages\AssimpNet.4.1.0\build\AssimpNet.targets')" />
-  <Import Project="..\packages\DirectXTexNet.1.0.0-rc3\build\DirectXTexNet.targets" Condition="Exists('..\packages\DirectXTexNet.1.0.0-rc3\build\DirectXTexNet.targets')" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DirectXTexNet" Version="1.0.0-rc3" />
+  </ItemGroup>
 </Project>
