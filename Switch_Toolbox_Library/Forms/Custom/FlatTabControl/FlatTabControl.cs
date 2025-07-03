@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.IO;
 using Toolbox.Library.Forms;
-using System.Windows.Forms;
 
 namespace FlatTabControl
 {
